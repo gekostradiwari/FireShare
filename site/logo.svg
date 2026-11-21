@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="90 90 360 360" width="360" height="360">
+  <!-- Versione semplificata per flutter_svg: niente filtri, niente <text>.
+       L'originale completo e' in fireshare_logo_full.svg -->
+  <defs>
+    <linearGradient id="goldGradient" gradientUnits="userSpaceOnUse" x1="140" y1="150" x2="420" y2="360">
+      <stop offset="0%" stop-color="#FFF3A1" />
+      <stop offset="30%" stop-color="#FFE066" />
+      <stop offset="70%" stop-color="#F5A623" />
+      <stop offset="100%" stop-color="#C06000" />
+    </linearGradient>
+    <linearGradient id="glossGradient" gradientUnits="userSpaceOnUse" x1="0" y1="150" x2="0" y2="360">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.65" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ombra della nuvola (copia scura traslata, al posto del filtro) -->
+  <g fill="#000000" fill-opacity="0.22" transform="translate(0 12)">
+    <circle cx="270" cy="240" r="90" />
+    <circle cx="180" cy="290" r="65" />
+    <circle cx="360" cy="280" r="75" />
+    <rect x="180" y="225" width="180" height="130" />
+  </g>
+
+  <!-- Nuvola dorata -->
+  <g fill="url(#goldGradient)">
+    <circle cx="270" cy="240" r="90" />
+    <circle cx="180" cy="290" r="65" />
+    <circle cx="360" cy="280" r="75" />
+    <rect x="180" y="225" width="180" height="130" />
+  </g>
+
+  <!-- Riflesso glossy -->
+  <g fill="url(#glossGradient)">
+    <circle cx="270" cy="240" r="90" />
+    <circle cx="180" cy="290" r="65" />
+    <circle cx="360" cy="280" r="75" />
+  </g>
+
+  <!-- Iniziali "FS" disegnate come tracciati (ombra + bianco) -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="26">
+    <g stroke="#000000" stroke-opacity="0.3" transform="translate(0 9)">
+      <path d="M 258 282 L 202 282 L 202 372 M 202 326 L 246 326" />
+      <path d="M 350 296 C 338 270, 288 272, 288 304 C 288 336, 352 328, 352 358 C 352 392, 298 390, 286 364" />
+    </g>
+    <g stroke="#FFFFFF">
+      <path d="M 258 282 L 202 282 L 202 372 M 202 326 L 246 326" />
+      <path d="M 350 296 C 338 270, 288 272, 288 304 C 288 336, 352 328, 352 358 C 352 392, 298 390, 286 364" />
+    </g>
+  </g>
+</svg>

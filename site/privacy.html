@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Informativa sulla privacy — FireShare</title>
+  <meta name="description" content="Come FireShare tratta i dati: i file restano sul tuo computer, nessun server dello sviluppatore, nessuna pubblicità.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="logo.svg" alt="">FireShare</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="terms.html">Termini di servizio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="lang-switch">Italiano · <a href="#en">English version below</a></p>
+    <h1>Informativa sulla privacy di FireShare</h1>
+    <p class="muted">Ultimo aggiornamento: <mark>[DATA]</mark></p>
+
+    <section class="card">
+      <h2>1. Chi siamo</h2>
+      <p>FireShare è un'applicazione sviluppata da <mark>[NOME COGNOME]</mark> nell'ambito di un progetto di tesi di laurea. Per qualsiasi domanda su questa informativa: <mark>[EMAIL DI CONTATTO]</mark>.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. In sintesi</h2>
+      <ul>
+        <li>FireShare è composta da un programma sul <strong>tuo computer</strong> e da un'app sul <strong>tuo telefono Android</strong>. I file passano direttamente dall'uno all'altro, cifrati con HTTPS.</li>
+        <li><strong>Lo sviluppatore non gestisce alcun server</strong> e non riceve, non vede e non conserva i tuoi file né i tuoi dati personali.</li>
+        <li>L'app <strong>non contiene pubblicità</strong>, strumenti di analisi o tracciamento, e non vende né condivide dati con terzi.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. Dati e permessi usati dall'app sul telefono</h2>
+      <table>
+        <tr><th>Cosa</th><th>A cosa serve</th><th>Dove va</th></tr>
+        <tr><td>Foto, video e file del telefono (permessi di lettura di foto e video, posizione contenuta nelle foto)</td><td>Caricarli sul tuo PC, quando sei tu a sceglierli o ad attivare il backup automatico</td><td>Solo al PC che hai collegato. Non allo sviluppatore.</td></tr>
+        <tr><td>Fotocamera</td><td>Leggere il QR di collegamento</td><td>Nessuna immagine viene salvata o inviata.</td></tr>
+        <tr><td>Token di accesso, impronta del certificato e indirizzi del tuo PC</td><td>Riconoscere il tuo PC e farsi riconoscere da esso</td><td>Restano sul telefono, nell'archivio cifrato di Android (Keystore).</td></tr>
+        <tr><td>Coda dei trasferimenti e impostazioni di backup (nomi dei file, percorsi, stato)</td><td>Far riprendere i trasferimenti interrotti e ricordare le scelte</td><td>File locali dell'app sul telefono.</td></tr>
+        <tr><td>Notifiche e rete</td><td>Mostrare l'avanzamento dei trasferimenti; comunicare con il PC</td><td>—</td></tr>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>4. Dati sul tuo computer</h2>
+      <p>Il programma sul PC conserva, sotto il tuo controllo: i file che ricevi nella cartella scelta (con una cartella interna nascosta per file temporanei e miniature), il certificato di sicurezza, le impostazioni, l'elenco dei telefoni collegati (nome, data di collegamento e dell'ultimo accesso) e un <strong>hash</strong> del token di ciascun telefono: il token in chiaro non viene mai salvato sul PC.</p>
+    </section>
+
+    <section class="card" id="google">
+      <h2>5. Google Foto (funzione facoltativa)</h2>
+      <p>Se scegli di importare foto da Google Foto, l'app ti chiede di accedere con il tuo account Google e richiede <strong>un solo permesso</strong>: <code>https://www.googleapis.com/auth/photospicker.mediaitems.readonly</code> (Google Photos Picker API).</p>
+      <ul>
+        <li><strong>Quali dati vede l'app:</strong> soltanto le foto e i video che selezioni tu nel selettore di Google. Non ha accesso al resto della tua libreria.</li>
+        <li><strong>Come li usa:</strong> li scarica sul telefono in file temporanei e li invia al tuo PC, con l'unico scopo di darti la copia sul tuo computer. I file temporanei vengono eliminati dopo l'invio.</li>
+        <li><strong>Cosa non fa:</strong> non invia questi dati allo sviluppatore né a terzi, non li usa per pubblicità e non li usa per addestrare modelli di intelligenza artificiale; non li legge nessuna persona. L'app non può modificare né eliminare nulla nel tuo account Google Foto.</li>
+        <li><strong>Account:</strong> il nome dell'account Google usato è mostrato nell'app e resta sul telefono.</li>
+        <li><strong>Revoca:</strong> puoi toccare «Esci» nell'app, oppure revocare l'accesso in qualsiasi momento dalle impostazioni del tuo account Google (<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>).</li>
+      </ul>
+      <p>L'uso delle informazioni ricevute dalle API di Google Foto rispetta la <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, inclusi i requisiti di «uso limitato» (Limited Use).</p>
+    </section>
+
+    <section class="card">
+      <h2>6. Altri servizi, solo se li attivi</h2>
+      <ul>
+        <li><strong>DuckDNS</strong> (duckdns.org): se configuri un nome DuckDNS, il tuo PC invia a quel servizio il nome scelto e il tuo token DuckDNS per aggiornare il suo indirizzo. Si applica l'informativa di DuckDNS.</li>
+        <li><strong>Rilevamento dell'IP pubblico</strong> (api.ipify.org): quando attivi l'accesso da fuori casa o premi il controllo, il PC può chiedere a questo servizio quale sia il tuo IP pubblico.</li>
+        <li><strong>Router (UPnP)</strong>: il PC parla con il tuo router, nella tua rete locale, per aprire una porta.</li>
+        <li><strong>Tailscale</strong>: servizio indipendente e opzionale, con la sua informativa; FireShare si limita a riconoscerne gli indirizzi.</li>
+      </ul>
+      <p>Senza queste funzioni, il PC non contatta alcun servizio esterno.</p>
+    </section>
+
+    <section class="card">
+      <h2>7. Link di condivisione</h2>
+      <p>Quando crei un link temporaneo, il PC rende scaricabile quel file a chiunque abbia il link, finché non scade, non raggiunge il limite di download impostato o non lo revochi. Puoi aggiungere una password. Sceglila e condividila con cura.</p>
+    </section>
+
+    <section class="card">
+      <h2>8. Conservazione, cancellazione e diritti</h2>
+      <p>I dati stanno solo sui tuoi dispositivi, quindi sei tu a controllarli: puoi eliminare file e miniature dal PC, revocare un telefono dall'elenco dei dispositivi, scollegarlo dalle Impostazioni dell'app, disinstallare l'app (che elimina i dati locali del telefono) e cancellare la cartella di configurazione del programma sul PC. Poiché lo sviluppatore non riceve né conserva dati personali, non ha dati da fornirti, correggere o cancellare; per qualsiasi richiesta scrivi a <mark>[EMAIL DI CONTATTO]</mark>.</p>
+    </section>
+
+    <section class="card">
+      <h2>9. Sicurezza</h2>
+      <p>La comunicazione tra telefono e PC usa HTTPS: il telefono verifica l'impronta del certificato del PC letta dal QR di collegamento e il PC riconosce ciascun telefono con un token personale casuale. I file ricevuti sono verificati con SHA-256. Nessun sistema è sicuro al 100%: mantieni aggiornati il PC e il telefono e proteggili con una password. I file sul PC non sono cifrati a riposo e FireShare non sostituisce un backup.</p>
+    </section>
+
+    <section class="card">
+      <h2>10. Minori e modifiche</h2>
+      <p>L'app non è rivolta ai minori e non raccoglie consapevolmente dati di minori. Se questa informativa cambia, la nuova versione sarà pubblicata in questa pagina con la data aggiornata; se cambia il modo in cui l'app usa i dati di Google, ti verrà chiesto un nuovo consenso.</p>
+    </section>
+
+    <hr class="lang" id="en">
+
+    <p class="lang-switch"><a href="#top">Italiano</a> · English</p>
+    <h1 lang="en">FireShare Privacy Policy</h1>
+    <p class="muted" lang="en">Last updated: <mark>[DATE]</mark></p>
+
+    <div lang="en">
+      <section class="card">
+        <h2>1. Who we are</h2>
+        <p>FireShare is an application developed by <mark>[FULL NAME]</mark> as a university thesis project. Questions about this policy: <mark>[CONTACT EMAIL]</mark>.</p>
+      </section>
+
+      <section class="card">
+        <h2>2. Summary</h2>
+        <ul>
+          <li>FireShare consists of a program on <strong>your computer</strong> and an app on <strong>your Android phone</strong>. Files travel directly between them, encrypted with HTTPS.</li>
+          <li><strong>The developer runs no servers</strong> and does not receive, see or store your files or personal data.</li>
+          <li>The app contains <strong>no advertising</strong>, analytics or tracking, and does not sell or share data with third parties.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>3. Data and permissions used by the phone app</h2>
+        <table>
+          <tr><th>What</th><th>Why</th><th>Where it goes</th></tr>
+          <tr><td>Photos, videos and files on the phone (media read permissions, location data embedded in photos)</td><td>To upload them to your PC, when you select them or turn on automatic backup</td><td>Only to the computer you paired. Never to the developer.</td></tr>
+          <tr><td>Camera</td><td>To read the pairing QR code</td><td>No image is saved or sent.</td></tr>
+          <tr><td>Access token, certificate fingerprint and your PC's addresses</td><td>To recognize your PC and be recognized by it</td><td>Stay on the phone, in Android's encrypted storage (Keystore).</td></tr>
+          <tr><td>Transfer queue and backup settings (file names, paths, status)</td><td>To resume interrupted transfers and remember your choices</td><td>Local app files on the phone.</td></tr>
+          <tr><td>Notifications and network</td><td>To show transfer progress; to talk to the PC</td><td>—</td></tr>
+        </table>
+      </section>
+
+      <section class="card">
+        <h2>4. Data on your computer</h2>
+        <p>The PC program stores, under your control: the files you receive in the folder you chose (plus a hidden internal folder for temporary files and thumbnails), its security certificate, settings, the list of paired phones (name, pairing date, last access) and a <strong>hash</strong> of each phone's token. The plain token is never stored on the PC.</p>
+      </section>
+
+      <section class="card">
+        <h2>5. Google Photos (optional feature)</h2>
+        <p>If you choose to import photos from Google Photos, the app asks you to sign in with your Google account and requests <strong>a single scope</strong>: <code>https://www.googleapis.com/auth/photospicker.mediaitems.readonly</code> (Google Photos Picker API).</p>
+        <ul>
+          <li><strong>What the app can see:</strong> only the photos and videos you select in Google's picker. It has no access to the rest of your library.</li>
+          <li><strong>How it uses them:</strong> it downloads them to the phone as temporary files and sends them to your own PC, for the sole purpose of giving you a copy on your computer. Temporary files are deleted after upload.</li>
+          <li><strong>What it does not do:</strong> it does not send this data to the developer or to third parties, does not use it for advertising or to train artificial-intelligence models, and no human reads it. The app cannot modify or delete anything in your Google Photos account.</li>
+          <li><strong>Account:</strong> the name of the Google account in use is shown in the app and stays on the phone.</li>
+          <li><strong>Revoking access:</strong> tap “Sign out” in the app, or revoke access at any time in your Google Account settings (<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>).</li>
+        </ul>
+        <p>FireShare's use of information received from Google Photos APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+      </section>
+
+      <section class="card">
+        <h2>6. Other services, only if you turn them on</h2>
+        <ul>
+          <li><strong>DuckDNS</strong> (duckdns.org): if you configure a DuckDNS name, your PC sends that service the chosen name and your DuckDNS token to update its address. DuckDNS's own policy applies.</li>
+          <li><strong>Public IP lookup</strong> (api.ipify.org): when you enable remote access or press the check button, the PC may ask this service for your public IP address.</li>
+          <li><strong>Router (UPnP)</strong>: the PC talks to your router, on your local network, to open a port.</li>
+          <li><strong>Tailscale</strong>: an independent, optional service with its own policy; FireShare only recognizes its addresses.</li>
+        </ul>
+        <p>Without these features, the PC contacts no external service.</p>
+      </section>
+
+      <section class="card">
+        <h2>7. Share links</h2>
+        <p>When you create a temporary link, your PC makes that file downloadable by anyone who has the link until it expires, reaches the download limit you set, or you revoke it. You can add a password. Choose and share it carefully.</p>
+      </section>
+
+      <section class="card">
+        <h2>8. Retention, deletion and your rights</h2>
+        <p>Data lives only on your own devices, so you control it: you can delete files and thumbnails on the PC, revoke a phone from the device list, unlink it in the app's Settings, uninstall the app (which removes the phone's local data) and delete the program's configuration folder on the PC. Because the developer does not receive or store personal data, there is no data to provide, correct or delete; for any request write to <mark>[CONTACT EMAIL]</mark>.</p>
+      </section>
+
+      <section class="card">
+        <h2>9. Security</h2>
+        <p>Phone–PC communication uses HTTPS: the phone checks the PC certificate's fingerprint read from the pairing QR code, and the PC recognizes each phone by a random personal token. Received files are verified with SHA-256. No system is 100% secure: keep your PC and phone up to date and protected with a password. Files on the PC are not encrypted at rest, and FireShare is not a substitute for a backup.</p>
+      </section>
+
+      <section class="card">
+        <h2>10. Children and changes</h2>
+        <p>The app is not directed at children and does not knowingly collect their data. If this policy changes, the new version will be published on this page with an updated date; if the way the app uses Google data changes, you will be asked for new consent.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Termini di servizio</a>
+    <div>© <mark>[ANNO]</mark> <mark>[NOME COGNOME]</mark></div>
+  </footer>
+</body>
+</html>

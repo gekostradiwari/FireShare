@@ -1,0 +1,19 @@
+# --- Programmi compilati (si consegnano con GitHub "Releases", non nel repository) ---
+*.exe
+*.apk
+*.aab
+*.app
+
+# --- Log e file temporanei ---
+gradle-log.txt
+*.log
+.DS_Store
+Thumbs.db
+
+# --- Segreti e file legati a una sola macchina: NON committare mai ---
+*.keystore
+*.jks
+key.properties
+google-services.json
+.env
+local.properties

@@ -1,0 +1,55 @@
+name: flutter_client
+description: "FireShare: il tuo PC come spazio cloud personale, con trasferimento di foto e file dal telefono."
+publish_to: 'none'
+
+version: 0.2.0+2
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+# Intervalli volutamente larghi: `flutter pub get` sceglie le versioni compatibili
+# con Flutter 3.19 / Dart 3.3. `path` è fissato dall'SDK Flutter, non alzarlo.
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.6
+  crypto: ^3.0.3
+  http: ^1.2.0
+  path: ^1.8.0
+  path_provider: ^2.1.2
+
+  # accoppiamento e sicurezza
+  mobile_scanner: ^5.0.0
+  flutter_secure_storage: ^9.0.0
+
+  # file e foto
+  file_picker: ^8.0.0
+  photo_manager: ">=3.0.0 <3.8.3" # 3.8.3 usa core-ktx toUri, 3.9+ compileSdk 36: non compilano con AGP 7.3
+  open_filex: ^4.3.4
+  share_plus: ^9.0.0
+  permission_handler: ^11.3.0
+
+  #svg_assets
+  flutter_svg: ^2.0.10+1
+
+  # Google Foto (Picker API)
+  google_sign_in: ^6.2.1
+  url_launcher: ^6.2.5
+
+  # tiene vivo il processo durante gli upload
+  flutter_background_service: ^5.0.5
+
+  # backup automatico: controlli periodici in background e rete (Wi-Fi / dati)
+  workmanager: ^0.5.2
+  connectivity_plus: ^5.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - lib/resources/fireshare_logo.svg
