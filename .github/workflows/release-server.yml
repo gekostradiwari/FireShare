@@ -1,0 +1,90 @@
+name: Compila e pubblica il server
+
+on:
+  push:
+    tags:
+      - 'server-v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            asset: fireshare-server-windows-amd64.zip
+          - os: macos-latest
+            asset: fireshare-server-macos-universal.zip
+          - os: ubuntu-22.04
+            asset: fireshare-server-linux-amd64.tar.gz
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installa le dipendenze di sistema (solo Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev build-essential pkg-config
+
+      - name: Installa Wails CLI
+        run: go install github.com/wailsapp/wails/v2/cmd/wails@v2.13.0
+
+      - name: Compila (Windows/Linux)
+        if: runner.os != 'macOS'
+        working-directory: go-backend/cmd/desktop
+        run: wails build
+
+      - name: Compila (macOS, binario universale)
+        if: runner.os == 'macOS'
+        working-directory: go-backend/cmd/desktop
+        run: wails build -platform darwin/universal
+
+      - name: Crea l'archivio (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: Compress-Archive -Path go-backend/cmd/desktop/build/bin/desktop.exe -DestinationPath ${{ matrix.asset }}
+
+      - name: Crea l'archivio (macOS)
+        if: runner.os == 'macOS'
+        run: ditto -c -k --keepParent go-backend/cmd/desktop/build/bin/desktop.app ${{ matrix.asset }}
+
+      - name: Crea l'archivio (Linux)
+        if: runner.os == 'Linux'
+        run: tar -czf ${{ matrix.asset }} -C go-backend/cmd/desktop/build/bin desktop
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.asset }}
+          path: ${{ matrix.asset }}
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: Leggi la versione dal tag
+        id: version
+        run: echo "name=${GITHUB_REF_NAME#server-}" >> "$GITHUB_OUTPUT"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: FireShare Server ${{ steps.version.outputs.name }}
+          files: dist/*
