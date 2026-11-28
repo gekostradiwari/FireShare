@@ -185,6 +185,8 @@ Si può collegare il proprio account Google per trasferire le foto salvate su Go
 - JDK 17
 - Flutter SDK 3.19.3
 - Android 6.0 o successivo sul telefono
+- Android SDK API 34
+- Android SDK Build-Tools 30.0.3
 
 **1. Compilare il server**
 
@@ -221,6 +223,8 @@ L'APK si trova in `FireShare/flutter_client/build/app/outputs/flutter-apk/app-de
 - Flutter SDK 3.19.3
 - Android 6.0 o successivo sul telefono
 - Go 1.25 o successivo per l'app desktop
+- Android SDK API 34
+- Android SDK Build-Tools 30.0.3
 
 **1. Compilare il server**
 
